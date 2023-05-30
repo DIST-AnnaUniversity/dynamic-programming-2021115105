@@ -1,4 +1,4 @@
-#To find the Longest common subsequence 
+
 def longest_common_subsequence(str1, str2):
     m = len(str1)
     n = len(str2)
@@ -27,7 +27,6 @@ def longest_common_subsequence(str1, str2):
 
     return lcs
 
-# Test the algorithm
 str1 = input("Enter the first string: ")
 str2 = input("Enter the second string: ")
 
