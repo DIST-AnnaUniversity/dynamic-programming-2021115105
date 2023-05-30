@@ -1,10 +1,9 @@
 def knapsack(weights, values, capacity):
     n = len(weights)
 
-    # Create a (n+1) x (capacity+1) matrix to store the maximum values
     max_values = [[0] * (capacity+1) for _ in range(n+1)]
 
-    # Compute the maximum value for all subproblems
+    
     for i in range(1, n+1):
         for w in range(1, capacity+1):
             if weights[i-1] <= w:
@@ -12,7 +11,7 @@ def knapsack(weights, values, capacity):
             else:
                 max_values[i][w] = max_values[i-1][w]
 
-    # Determine the items included in the knapsack
+    
     included_items = []
     i = n
     w = capacity
@@ -24,7 +23,7 @@ def knapsack(weights, values, capacity):
 
     return max_values[n][capacity], included_items[::-1]
 
-# Get input from the user
+
 n = int(input("Enter the number of items: "))
 weights = []
 values = []
@@ -41,9 +40,8 @@ for _ in range(n):
 
 capacity = int(input("Enter the knapsack capacity: "))
 
-# Calculate the maximum value and included items
+
 max_value, included_items = knapsack(weights, values, capacity)
 
-# Print the result
 print("Maximum Value:", max_value)
 print("Included Items:", included_items)
